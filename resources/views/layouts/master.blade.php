@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/downloaded-css/jqvmap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/downloaded-css/weather-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/downloaded-css/fullcalendar.min.css') }}">
-
+    @yield('additional_links')
    <style>
     #weatherWidget .currentDesc {
         color: #ffffff!important;
@@ -131,7 +131,7 @@
                                 <span class="count bg-primary">4</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">Email orqali 4 ta xabar keldi</p>
+                                <p class="red">Pochta orqali 4 ta xabar keldi</p>
                                 <a class="dropdown-item media" href="#">
                                     <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
                                     <div class="message media-body">
@@ -174,13 +174,13 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Profilim</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Bildirishnomalar <span class="count">13</span></a>
 
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Sozlamalar</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Chiqish</a>
                         </div>
                     </div>
 
@@ -221,7 +221,7 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="assets/js/init/fullcalendar-init.js"></script>
-
+    @yield('additional_scripts')
     <!--Local Stuff-->
     <script>
         jQuery(document).ready(function($) {

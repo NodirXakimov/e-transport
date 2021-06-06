@@ -1,3 +1,8 @@
+@extends('layouts.master')
+@section('additional_links')
+    <link rel="stylesheet" href="{{ asset('assets/css/lib/chosen/chosen.min.css') }}">
+    
+@endsection
 @section('content')
     <div class="row">
         <div class="col-sm-6 col-lg-3">
@@ -81,218 +86,103 @@
             </div>
         </div>
         <!--/.col-->
-
-
-
-        <div class="col-lg-3 col-md-6">
+    </div>
+    <div class="row pt-3"  style="background: rgb(240, 239, 239)">
+        <div class="col-6">
+            <h3 class="pb-3">Qayerdan</h3>
             <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Viloyatni tanlang</strong>
+                </div>
                 <div class="card-body">
-                    <div class="stat-widget-four">
-                        <div class="stat-icon dib">
-                            <i class="ti-server text-muted"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-heading">Database</div>
-                                <div class="stat-text">Total: 765</div>
-                            </div>
-                        </div>
-                    </div>
+
+                  <select data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                        <option value="" label="default"></option>
+                        <option value="United States">United States</option>
+                    </select>
                 </div>
             </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
             <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Tumanni tanlang</strong>
+                </div>
                 <div class="card-body">
-                    <div class="stat-widget-four">
-                        <div class="stat-icon dib">
-                            <i class="ti-user text-muted"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-heading">Users</div>
-                                <div class="stat-text">Total: 24720</div>
-                            </div>
-                        </div>
-                    </div>
+
+                  <select disabled data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                        <option value="" label="default"></option>
+                        <option value="United States">United States</option>
+                    </select>
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-3 col-md-6">
+        <div class="col-6">
+            <h3 class="pb-3">Qayerga</h3>
             <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Viloyatni tanlang</strong>
+                </div>
                 <div class="card-body">
-                    <div class="stat-widget-four">
-                        <div class="stat-icon dib">
-                            <i class="ti-stats-up text-muted"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-heading">Daily Sales</div>
-                                <div class="stat-text">Total: $76,58,714</div>
-                            </div>
-                        </div>
-                    </div>
+
+                  <select data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                        <option value="" label="default"></option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Aland Islands">Aland Islands</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antarctica">Antarctica</option>
+                    </select>
                 </div>
             </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
             <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Tumanni tanlang</strong>
+                </div>
                 <div class="card-body">
-                    <div class="stat-widget-four">
-                        <div class="stat-icon dib">
-                            <i class="ti-pulse text-muted"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-heading">Bandwidth</div>
-                                <div class="stat-text">Total: 4TB</div>
-                            </div>
-                        </div>
-                    </div>
+
+                  <select data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                        <option value="" label="default"></option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Aland Islands">Aland Islands</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antarctica">Antarctica</option>
+                    </select>
                 </div>
             </div>
         </div>
+        
+    </div>
 
+@endsection
 
+@section('additional_scripts')
+{{-- <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script> --}}
+<script src="{{ asset('assets/js/main.js') }}"></script>
+<script src="{{ asset('assets/js/lib/chosen/chosen.jquery.js') }}"></script>
 
+<script>
+    jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 10,
+            no_results_text: "Oops, nothing found!",
+            width: "100%"
+        });
+    });
+</script>
 
-        <div class="col-lg-3 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">Total Profit</div>
-                            <div class="stat-digit">1,012</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">New Customer</div>
-                            <div class="stat-digit">961</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">Active Projects</div>
-                            <div class="stat-digit">770</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-link text-danger border-danger"></i></div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">Referrals</div>
-                            <div class="stat-digit">2,781</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div class="col-sm-12 mb-4">
-            <div class="card-group">
-                <div class="card col-md-6 no-padding ">
-                    <div class="card-body">
-                        <div class="h1 text-muted text-right mb-4">
-                            <i class="fa fa-users"></i>
-                        </div>
-
-                        <div class="h4 mb-0">
-                            <span class="count">87500</span>
-                        </div>
-
-                        <small class="text-muted text-uppercase font-weight-bold">Visitors</small>
-                        <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
-                    </div>
-                </div>
-                <div class="card col-md-6 no-padding ">
-                    <div class="card-body">
-                        <div class="h1 text-muted text-right mb-4">
-                            <i class="fa fa-user-plus"></i>
-                        </div>
-                        <div class="h4 mb-0">
-                            <span class="count">385</span>
-                        </div>
-                        <small class="text-muted text-uppercase font-weight-bold">New Clients</small>
-                        <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 40%; height: 5px;"></div>
-                    </div>
-                </div>
-                <div class="card col-md-6 no-padding ">
-                    <div class="card-body">
-                        <div class="h1 text-muted text-right mb-4">
-                            <i class="fa fa-cart-plus"></i>
-                        </div>
-                        <div class="h4 mb-0">
-                            <span class="count">1238</span>
-                        </div>
-                        <small class="text-muted text-uppercase font-weight-bold">Products sold</small>
-                        <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 40%; height: 5px;"></div>
-                    </div>
-                </div>
-                <div class="card col-md-6 no-padding ">
-                    <div class="card-body">
-                        <div class="h1 text-muted text-right mb-4">
-                            <i class="fa fa-pie-chart"></i>
-                        </div>
-                        <div class="h4 mb-0">
-                            <span class="count">28</span>%
-                        </div>
-                        <small class="text-muted text-uppercase font-weight-bold">Returning Visitors</small>
-                        <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width: 40%; height: 5px;"></div>
-                    </div>
-                </div>
-                <div class="card col-md-6 no-padding ">
-                    <div class="card-body">
-                        <div class="h1 text-muted text-right mb-4">
-                            <i class="fa fa-clock-o"></i>
-                        </div>
-                        <div class="h4 mb-0">5:34:11</div>
-                        <small class="text-muted text-uppercase font-weight-bold">Avg. Time</small>
-                        <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 40%; height: 5px;"></div>
-                    </div>
-                </div>
-                <div class="card col-md-6 no-padding ">
-                    <div class="card-body">
-                        <div class="h1 text-muted text-right mb-4">
-                            <i class="fa fa-comments-o"></i>
-                        </div>
-                        <div class="h4 mb-0">
-                            <span class="count">972</span>
-                        </div>
-                        <small class="text-muted text-uppercase font-weight-bold">COMMENTS</small>
-                        <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- .row -->
 @endsection
