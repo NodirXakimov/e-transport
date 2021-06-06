@@ -96,9 +96,10 @@
                 </div>
                 <div class="card-body">
 
-                  <select data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                  <select id="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
                         <option value="" label="default"></option>
-                        <option value="United States">United States</option>
+                        <option value="1">United States</option>
+                        <option value="2">United States</option>
                     </select>
                 </div>
             </div>
@@ -168,10 +169,6 @@
 @endsection
 
 @section('additional_scripts')
-{{-- <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script> --}}
 <script src="{{ asset('assets/js/main.js') }}"></script>
 <script src="{{ asset('assets/js/lib/chosen/chosen.jquery.js') }}"></script>
 
@@ -181,6 +178,10 @@
             disable_search_threshold: 10,
             no_results_text: "Oops, nothing found!",
             width: "100%"
+        });
+        jQuery('#regionTo').chosen().change(function(obj, res){
+            alert('lksdjflskjfsldk');
+            console.log(res);
         });
     });
 </script>
