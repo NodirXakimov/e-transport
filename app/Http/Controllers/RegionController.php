@@ -14,9 +14,9 @@ class RegionController extends Controller
      */
     public function index()
     {
-        $region = Region::select('id', 'name')->orderBy('name')->get();
-        // $region = Region::all('id', 'name');
-        return $region;
+        $regions = Region::select('id', 'name')->orderBy('name')->get();
+        // $regions = Region::all('id', 'name');
+        return $regions;
     }
 
     /**

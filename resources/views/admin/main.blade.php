@@ -96,10 +96,8 @@
                 </div>
                 <div class="card-body">
 
-                  <select id="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                  <select id="regionFrom" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
                         <option value="" label="default"></option>
-                        <option value="1">United States</option>
-                        <option value="2">United States</option>
                     </select>
                 </div>
             </div>
@@ -174,12 +172,23 @@
 
 <script>
     jQuery(document).ready(function() {
+        axios.get('/regions')
+            .then(result => {
+                let options = '<option value="" label="default"></option>';
+                result.data.forEach(region => {
+                    options += `<option value="${region.id}">${region.name}</option>`;
+                });
+                jQuery('#regionFrom').html(options);
+                console.log(options);
+            }).catch(err => {
+                console.log(err);
+            })
         jQuery(".standardSelect").chosen({
             disable_search_threshold: 10,
             no_results_text: "Oops, nothing found!",
             width: "100%"
         });
-        jQuery('#regionTo').chosen().change(function(obj, res){
+        jQuery('#regionFrom').chosen().change(function(obj, res){
             alert('lksdjflskjfsldk');
             console.log(res);
         });
