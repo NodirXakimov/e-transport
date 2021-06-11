@@ -82,4 +82,11 @@ class DistrictController extends Controller
     {
         //
     }
+
+    public function getDistrictsOfRegin(Request $request)
+    {
+        $region = Region::findOrFail($request->id);
+        $districts = $region->districts;
+        return $districts;
+    }
 }

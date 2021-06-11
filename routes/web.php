@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Region;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +23,10 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/regions', [App\Http\Controllers\RegionController::class, 'index'])->name('regions');
+    Route::get('/regions/{id}/districts', [App\Http\Controllers\DistrictController::class, 'getDistrictsOfRegion'])->name('districts');
 });
-Route::view('/test', 'admin.main');
+Route::get('/test', function(){
+    $region = Region::findOrFail(1);
+    return $region->districts;
+    return $region;
+});

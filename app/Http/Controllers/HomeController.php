@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Region;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.main');
+        $regions = Region::select('id', 'name')->orderBy('name')->get();
+        return view('admin.main', ['regions' => $regions]);
     }
 }

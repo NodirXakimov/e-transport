@@ -98,6 +98,11 @@
 
                   <select id="regionFrom" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
                         <option value="" label="default"></option>
+                        @if (isset($regions))
+                            @foreach ($regions as $region)
+                                <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
             </div>
@@ -189,7 +194,7 @@
             width: "100%"
         });
         jQuery('#regionFrom').chosen().change(function(obj, res){
-            alert('lksdjflskjfsldk');
+            alert(res.selected);
             console.log(res);
         });
     });
