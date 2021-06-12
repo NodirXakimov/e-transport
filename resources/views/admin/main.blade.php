@@ -112,9 +112,9 @@
                 </div>
                 <div class="card-body">
 
-                  <select disabled data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                  <select id="districtFrom" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
                         <option value="" label="default"></option>
-                        <option value="United States">United States</option>
+                        <option selected value="United States">United States</option>
                     </select>
                 </div>
             </div>
@@ -176,26 +176,26 @@
 <script src="{{ asset('assets/js/lib/chosen/chosen.jquery.js') }}"></script>
 
 <script>
-    jQuery(document).ready(function() {
-        axios.get('/regions')
-            .then(result => {
-                let options = '<option value="" label="default"></option>';
-                result.data.forEach(region => {
-                    options += `<option value="${region.id}">${region.name}</option>`;
-                });
-                jQuery('#regionFrom').html(options);
-                console.log(options);
-            }).catch(err => {
-                console.log(err);
-            })
+    jQuery(document).ready(function($) {
         jQuery(".standardSelect").chosen({
             disable_search_threshold: 10,
             no_results_text: "Oops, nothing found!",
             width: "100%"
         });
-        jQuery('#regionFrom').chosen().change(function(obj, res){
-            alert(res.selected);
-            console.log(res);
+        $('#regionFrom').chosen().change(function(obj, res){
+
+            axios.get(`/regions/${res.selected}/districts`)
+            .then(result => {
+                let options = '<option value="" label="default"></option>';
+                result.data.forEach(district => {
+                    options += `<option value="${district.id}">${district.name}</option>`;
+                });
+                jQuery('#districtFrom').empty().append(options);
+                jQuery('#districtFrom').trigger('chosen:updated');
+                let test = jQuery('#districtFrom').val();
+            }).catch(err => {
+                console.log(err);
+            })
         });
     });
 </script>

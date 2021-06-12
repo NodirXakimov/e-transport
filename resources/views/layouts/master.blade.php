@@ -213,9 +213,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
     <script src="assets/js/init/weather-init.js"></script>
@@ -225,7 +225,7 @@
     <script src="assets/js/init/fullcalendar-init.js"></script>
     @yield('additional_scripts')
     <!--Local Stuff-->
-    <script>
+    {{-- <script>
         jQuery(document).ready(function($) {
             "use strict";
 
@@ -415,6 +415,6 @@
             });
             // Bar Chart #flotBarChart End
         });
-    </script>
+    </script> --}}
 </body>
 </html>
