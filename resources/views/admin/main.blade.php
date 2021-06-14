@@ -87,72 +87,76 @@
         </div>
         <!--/.col-->
     </div>
+    <form action="{{ route('test') }}" method="POST">
+        @csrf
     <div class="row pt-3"  style="background: rgb(240, 239, 239)">
+            <div class="col-6">
+                <h3 class="pb-3">Qayerdan</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Viloyatni tanlang</strong>
+                    </div>
+                    <div class="card-body">
 
-        <div class="col-6">
-            <h3 class="pb-3">Qayerdan</h3>
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">Viloyatni tanlang</strong>
+                    <select id="regionFrom" name="regionFrom" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                            <option value="" label="default"></option>
+                            @if (isset($regions))
+                                @foreach ($regions as $region)
+                                    <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
                 </div>
-                <div class="card-body">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Tumanni tanlang</strong>
+                    </div>
+                    <div class="card-body">
 
-                  <select id="regionFrom" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
-                        <option value="" label="default"></option>
-                        @if (isset($regions))
-                            @foreach ($regions as $region)
-                                <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
-                            @endforeach
-                        @endif
-                    </select>
+                    <select id="districtFrom" name="districtFrom" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                            <option value="" label="default"></option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">Tumanni tanlang</strong>
-                </div>
-                <div class="card-body">
 
-                  <select id="districtFrom" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
-                        <option value="" label="default"></option>
-                        <option selected value="United States">United States</option>
-                    </select>
+            <div class="col-6">
+                <h3 class="pb-3">Qayerga</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Viloyatni tanlang</strong>
+                    </div>
+                    <div class="card-body">
+
+                    <select id="regionTo" name="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                            <option value="" label="default"></option>
+                            @if (isset($regions))
+                                @foreach ($regions as $region)
+                                    <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Tumanni tanlang</strong>
+                    </div>
+                    <div class="card-body">
+
+                    <select id="districtTo" name="districtTo" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                            <option value="" label="default"></option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-6">
-            <h3 class="pb-3">Qayerga</h3>
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">Viloyatni tanlang</strong>
-                </div>
-                <div class="card-body">
-
-                  <select id="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
-                        <option value="" label="default"></option>
-                        @if (isset($regions))
-                            @foreach ($regions as $region)
-                                <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
-                            @endforeach
-                        @endif
-                    </select>
-                </div>
+            <div class="col-12">
+                <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Tozalash</button>
+                <button type="submit" class="btn btn-success float-right"><i class="fa fa-search"></i>&nbsp; Qidirish</button>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">Tumanni tanlang</strong>
-                </div>
-                <div class="card-body">
-
-                  <select id="districtTo" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
-                        <option value="" label="default"></option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        
     </div>
+    </form>
 
 @endsection
 

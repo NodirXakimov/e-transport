@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Models\Region;
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/regions', [App\Http\Controllers\RegionController::class, 'index'])->name('regions');
     Route::get('/regions/{id}/districts', [App\Http\Controllers\DistrictController::class, 'getDistrictsOfRegion'])->name('districts');
+    // Route::post('bestway', [UserController::class, 'index'])->name('user.index');
 });
-Route::get('/test', function(){
-    $region = Region::findOrFail(1);
-    return $region->districts;
-    return $region;
-});
+Route::post('/test', function(Request $request){
+    return $request;
+})->name('test');
