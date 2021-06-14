@@ -88,6 +88,7 @@
         <!--/.col-->
     </div>
     <div class="row pt-3"  style="background: rgb(240, 239, 239)">
+
         <div class="col-6">
             <h3 class="pb-3">Qayerdan</h3>
             <div class="card">
@@ -119,6 +120,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-6">
             <h3 class="pb-3">Qayerga</h3>
             <div class="card">
@@ -127,19 +129,13 @@
                 </div>
                 <div class="card-body">
 
-                  <select data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                  <select id="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
                         <option value="" label="default"></option>
-                        <option value="United States">United States</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Afghanistan">Afghanistan</option>
-                        <option value="Aland Islands">Aland Islands</option>
-                        <option value="Albania">Albania</option>
-                        <option value="Algeria">Algeria</option>
-                        <option value="American Samoa">American Samoa</option>
-                        <option value="Andorra">Andorra</option>
-                        <option value="Angola">Angola</option>
-                        <option value="Anguilla">Anguilla</option>
-                        <option value="Antarctica">Antarctica</option>
+                        @if (isset($regions))
+                            @foreach ($regions as $region)
+                                <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
             </div>
@@ -149,19 +145,8 @@
                 </div>
                 <div class="card-body">
 
-                  <select data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                  <select id="districtTo" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
                         <option value="" label="default"></option>
-                        <option value="United States">United States</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Afghanistan">Afghanistan</option>
-                        <option value="Aland Islands">Aland Islands</option>
-                        <option value="Albania">Albania</option>
-                        <option value="Algeria">Algeria</option>
-                        <option value="American Samoa">American Samoa</option>
-                        <option value="Andorra">Andorra</option>
-                        <option value="Angola">Angola</option>
-                        <option value="Anguilla">Anguilla</option>
-                        <option value="Antarctica">Antarctica</option>
                     </select>
                 </div>
             </div>
@@ -176,14 +161,21 @@
 <script src="{{ asset('assets/js/lib/chosen/chosen.jquery.js') }}"></script>
 
 <script>
+    let regionFrom = null;
+    let districtFrom = null;
+    let regionTo = null;
+    let districtTo = null;
     jQuery(document).ready(function($) {
         jQuery(".standardSelect").chosen({
             disable_search_threshold: 10,
             no_results_text: "Oops, nothing found!",
             width: "100%"
         });
+        
+        // --- FROM
         $('#regionFrom').chosen().change(function(obj, res){
-
+            regionFrom = res.selected;
+            districtFrom = null;
             axios.get(`/regions/${res.selected}/districts`)
             .then(result => {
                 let options = '<option value="" label="default"></option>';
@@ -192,11 +184,38 @@
                 });
                 jQuery('#districtFrom').empty().append(options);
                 jQuery('#districtFrom').trigger('chosen:updated');
-                let test = jQuery('#districtFrom').val();
             }).catch(err => {
                 console.log(err);
             })
         });
+        $('#districtFrom').chosen().change(function(obj, res){
+            districtFrom = res.selected;
+        });
+        // --- END FROM
+
+        // --- TO
+        $('#regionTo').chosen().change(function(obj, res){
+            regionTo = res.selected;
+            districtTo = null;
+            axios.get(`/regions/${res.selected}/districts`)
+            .then(result => {
+                let options = '<option value="" label="default"></option>';
+                result.data.forEach(district => {
+                    options += `<option value="${district.id}">${district.name}</option>`;
+                });
+                jQuery('#districtTo').empty().append(options);
+                jQuery('#districtTo').trigger('chosen:updated');
+            }).catch(err => {
+                console.log(err);
+            })
+        });
+        $('#districtTo').chosen().change(function(obj, res){
+            districtTo = res.selected;
+            console.log(regionFrom + " " + districtFrom + ' ' + regionTo + ' ' + districtTo);
+        });
+        // --- END TO
+
+
     });
 </script>
 
