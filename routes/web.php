@@ -31,6 +31,14 @@ Route::middleware(['auth'])->group(function () {
 
     Route::view('importRegions', 'admin.importRegions');
     Route::post('importRegions', [App\Http\Controllers\HomeController::class, 'importRegions'])->name('importRegions');
+    Route::view('importPlanePrice', 'admin.importPlanePrice');
+    Route::post('importPlanePrice', [App\Http\Controllers\HomeController::class, 'importPlanePrice'])->name('importPlanePrice');
+
+    Route::view('importTrainPrice', 'admin.importTrainPrice');
+    Route::post('importTrainPrice', [App\Http\Controllers\HomeController::class, 'importTrainPrice'])->name('importTrainPrice');
+
+    Route::view('importBusPrice', 'admin.importBusPrice');
+    Route::post('importBusPrice', [App\Http\Controllers\HomeController::class, 'importBusPrice'])->name('importBusPrice');
 
 });
 Route::get('/test/{id}', function($id){
