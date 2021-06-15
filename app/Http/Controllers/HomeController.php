@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Region;
 use Illuminate\Http\Request;
+use App\Imports\RegionsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
@@ -44,5 +46,12 @@ class HomeController extends Controller
             ]
         );
         return $request;
+    }
+
+    public function importRegions(Request $request)
+    {
+        Excel::import(new RegionsImport,$request->file('file'));
+           
+        return redirect()->back();
     }
 }

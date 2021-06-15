@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegionsTable extends Migration
+class CreatePlanePricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateRegionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('regions', function (Blueprint $table) {
+        Schema::create('plane_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('center');
+            $table->integer('regionFrom');
+            $table->integer('regionTo');
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateRegionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('regions');
+        Schema::dropIfExists('plane_prices');
     }
 }

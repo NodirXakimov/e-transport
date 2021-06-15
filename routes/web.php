@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Region;
+use App\Models\PlanePrice;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/regions', [App\Http\Controllers\RegionController::class, 'index'])->name('regions');
     Route::get('/regions/{id}/districts', [App\Http\Controllers\DistrictController::class, 'getDistrictsOfRegion'])->name('districts');
     Route::post('ways', [App\Http\Controllers\HomeController::class, 'ways'])->name('ways');
+
+
+    Route::view('importRegions', 'admin.importRegions');
+    Route::post('importRegions', [App\Http\Controllers\HomeController::class, 'importRegions'])->name('importRegions');
+
 });
-Route::post('/test', function(Request $request){
-    return $request;
+Route::get('/test/{id}', function($id){
+    $region = Region::findOrFail(1);
+    $regions = $region->planePrice;
+    foreach ($regions as $key => $region) {
+        if($region->id == $id)
+        return $region->price;
+    }
+    return $price[$id].price;
+    // $planePrice = PlanePrice::findOrFail(1);
+    // return $planePrice;
 })->name('test');
