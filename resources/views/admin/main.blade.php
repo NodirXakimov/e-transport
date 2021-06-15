@@ -87,7 +87,7 @@
         </div>
         <!--/.col-->
     </div>
-    <form action="{{ route('test') }}" method="POST">
+    <form action="{{ route('ways') }}" method="POST">
         @csrf
     <div class="row pt-3"  style="background: rgb(240, 239, 239)">
             <div class="col-6">
@@ -151,6 +151,17 @@
                     </div>
                 </div>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show col-12">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Diqqat!</strong> Quyidagi maydonlarni to'ldirish shart.
+                    <ul class="ml-5">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="col-12">
                 <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Tozalash</button>
                 <button type="submit" class="btn btn-success float-right"><i class="fa fa-search"></i>&nbsp; Qidirish</button>

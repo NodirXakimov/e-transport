@@ -27,4 +27,15 @@ class HomeController extends Controller
         $regions = Region::select('id', 'name')->orderBy('name')->get();
         return view('admin.main', ['regions' => $regions]);
     }
+
+    public function ways(Request $request)
+    {
+        $validate = $request->validate([
+            'regionFrom'    => 'required',
+            'regionTo'      => 'required',
+            'districtFrom'  => 'required',
+            'districtTo'    => 'required'
+        ]);
+        return $request;
+    }
 }

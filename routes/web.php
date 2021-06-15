@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/regions', [App\Http\Controllers\RegionController::class, 'index'])->name('regions');
     Route::get('/regions/{id}/districts', [App\Http\Controllers\DistrictController::class, 'getDistrictsOfRegion'])->name('districts');
-    // Route::post('bestway', [UserController::class, 'index'])->name('user.index');
+    Route::post('ways', [App\Http\Controllers\HomeController::class, 'ways'])->name('ways');
 });
 Route::post('/test', function(Request $request){
     return $request;
