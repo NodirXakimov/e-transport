@@ -17,7 +17,7 @@
                     </div><!-- /.card-left -->
 
                     <div class="card-right float-right text-right">
-                        <i class="icon fade-5 icon-lg pe-7s-cart"></i>
+                        <i class="icon fade-5 icon-lg fa fa-plane"></i>
                     </div><!-- /.card-right -->
 
                 </div>
@@ -38,7 +38,7 @@
                     </div><!-- /.card-left -->
 
                     <div class="card-right float-right text-right">
-                        <div id="flotBar1" class="flotBar1"></div>
+                        <i class="icon fade-5 icon-lg fa fa-train"></i>
                     </div><!-- /.card-right -->
 
                 </div>
@@ -58,7 +58,7 @@
                     </div><!-- /.card-left -->
 
                     <div class="card-right float-right text-right">
-                        <i class="icon fade-5 icon-lg pe-7s-users"></i>
+                        <i class="icon fade-5 icon-lg fa fa-bus"></i>
                     </div><!-- /.card-right -->
 
                 </div>
@@ -78,7 +78,9 @@
                     </div><!-- /.card-left -->
 
                     <div class="card-right float-right text-right">
-                        <div id="flotLine1" class="flotLine1"></div>
+                        <div id="flotLine1" class="flotLine1">
+                            <i class="icon fade-5 icon-lg fa fa-users"></i>
+                        </div>
                     </div><!-- /.card-right -->
 
                 </div>
@@ -89,84 +91,84 @@
     </div>
     <form action="{{ route('ways') }}" method="POST">
         @csrf
-    <div class="row pt-3"  style="background: rgb(240, 239, 239)">
-            <div class="col-6">
-                <h3 class="pb-3">Qayerdan</h3>
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">Viloyatni tanlang</strong>
-                    </div>
-                    <div class="card-body">
+        <div class="row pt-3"  style="background: rgb(240, 239, 239)">
+                <div class="col-6">
+                    <h3 class="pb-3">Qayerdan</h3>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Viloyatni tanlang</strong>
+                        </div>
+                        <div class="card-body">
 
-                    <select id="regionFrom" name="regionFrom" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
-                            <option value="" label="default"></option>
-                            @if (isset($regions))
-                                @foreach ($regions as $region)
-                                    <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
+                        <select id="regionFrom" name="regionFrom" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                                <option value="" label="default"></option>
+                                @if (isset($regions))
+                                    @foreach ($regions as $region)
+                                        <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Tumanni tanlang</strong>
+                        </div>
+                        <div class="card-body">
+
+                        <select id="districtFrom" name="districtFrom" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                                <option value="" label="default"></option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">Tumanni tanlang</strong>
-                    </div>
-                    <div class="card-body">
 
-                    <select id="districtFrom" name="districtFrom" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
-                            <option value="" label="default"></option>
-                        </select>
+                <div class="col-6">
+                    <h3 class="pb-3">Qayerga</h3>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Viloyatni tanlang</strong>
+                        </div>
+                        <div class="card-body">
+
+                        <select id="regionTo" name="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
+                                <option value="" label="default"></option>
+                                @if (isset($regions))
+                                    @foreach ($regions as $region)
+                                        <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Tumanni tanlang</strong>
+                        </div>
+                        <div class="card-body">
+
+                        <select id="districtTo" name="districtTo" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
+                                <option value="" label="default"></option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-6">
-                <h3 class="pb-3">Qayerga</h3>
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">Viloyatni tanlang</strong>
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show col-11 m-5">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Diqqat!</strong> Quyidagi maydonlarni to'ldirish shart.
+                        <ul class="ml-5">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="card-body">
-
-                    <select id="regionTo" name="regionTo" data-placeholder="Viloyatni tanlang..." class="standardSelect" tabindex="1">
-                            <option value="" label="default"></option>
-                            @if (isset($regions))
-                                @foreach ($regions as $region)
-                                    <option value="{{ $region->id }}" label="default">{{ $region->name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-                    </div>
+                @endif
+                <div class="col-12">
+                    <a href="{{ route('home') }}" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Tozalash</a>
+                    <button type="submit" class="btn btn-success float-right"><i class="fa fa-search"></i>&nbsp; Qidirish</button>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">Tumanni tanlang</strong>
-                    </div>
-                    <div class="card-body">
-
-                    <select id="districtTo" name="districtTo" data-placeholder="Tumani tanlang..." class="standardSelect" tabindex="1">
-                            <option value="" label="default"></option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show col-12">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Diqqat!</strong> Quyidagi maydonlarni to'ldirish shart.
-                    <ul class="ml-5">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <div class="col-12">
-                <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Tozalash</button>
-                <button type="submit" class="btn btn-success float-right"><i class="fa fa-search"></i>&nbsp; Qidirish</button>
-            </div>
-    </div>
+        </div>
     </form>
 
 @endsection

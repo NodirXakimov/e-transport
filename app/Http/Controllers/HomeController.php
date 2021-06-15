@@ -31,11 +31,18 @@ class HomeController extends Controller
     public function ways(Request $request)
     {
         $validate = $request->validate([
-            'regionFrom'    => 'required',
-            'regionTo'      => 'required',
-            'districtFrom'  => 'required',
-            'districtTo'    => 'required'
-        ]);
+                'regionFrom'    => 'required',
+                'regionTo'      => 'required',
+                'districtFrom'  => 'required',
+                'districtTo'    => 'required'
+            ],
+            [
+                'regionFrom.required'   => "Jo'nash viloyatini tanlang", 
+                'regionTo.required'     => "Boradigan viloyatingizni tanlang", 
+                'districtFrom.required' => "Jo'nash tuman yoki shahrini tanlang", 
+                'districtTo.required'   => "Boradigan tuman yoki shahringizni tanlang", 
+            ]
+        );
         return $request;
     }
 }
