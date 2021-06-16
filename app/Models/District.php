@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'student_id'];
+    protected $fillable = ['name', 'region_id', 'center'];
 
     /**
      * The region that belong to the District

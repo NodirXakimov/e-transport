@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Region;
 use Illuminate\Http\Request;
 use App\Imports\RegionsImport;
+use App\Imports\DistrictsImport;
 use App\Imports\PlanePriceImport;
 use App\Imports\TrainPriceImport;
 use App\Imports\BusPriceImport;
@@ -54,25 +55,26 @@ class HomeController extends Controller
     public function importRegions(Request $request)
     {
         Excel::import(new RegionsImport,$request->file('file'));
-           
+        return redirect()->back();
+    }
+    public function importDistricts(Request $request)
+    {
+        Excel::import(new DistrictsImport,$request->file('file'));
         return redirect()->back();
     }
     public function importPlanePrice(Request $request)
     {
         Excel::import(new PlanePriceImport,$request->file('file'));
-           
         return redirect()->back();
     }
     public function importTrainPrice(Request $request)
     {
         Excel::import(new TrainPriceImport,$request->file('file'));
-           
         return redirect()->back();
     }
     public function importBusPrice(Request $request)
     {
         Excel::import(new BusPriceImport,$request->file('file'));
-           
         return redirect()->back();
     }
 }

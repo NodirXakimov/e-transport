@@ -31,6 +31,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::view('importRegions', 'admin.importRegions');
     Route::post('importRegions', [App\Http\Controllers\HomeController::class, 'importRegions'])->name('importRegions');
+    
+    Route::view('importDistricts', 'admin.importDistricts');
+    Route::post('importDistricts', [App\Http\Controllers\HomeController::class, 'importDistricts'])->name('importDistricts');
+
     Route::view('importPlanePrice', 'admin.importPlanePrice');
     Route::post('importPlanePrice', [App\Http\Controllers\HomeController::class, 'importPlanePrice'])->name('importPlanePrice');
 
@@ -41,14 +45,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('importBusPrice', [App\Http\Controllers\HomeController::class, 'importBusPrice'])->name('importBusPrice');
 
 });
-Route::get('/test/{id}', function($id){
-    $region = Region::findOrFail(1);
-    $regions = $region->planePrice;
-    foreach ($regions as $key => $region) {
-        if($region->id == $id)
-        return $region->price;
-    }
-    return $price[$id].price;
-    // $planePrice = PlanePrice::findOrFail(1);
-    // return $planePrice;
-})->name('test');
+// Route::get('/test/{id}', function($id){
+//     $region = Region::findOrFail(1);
+//     $regions = $region->planePrice;
+//     foreach ($regions as $key => $region) {
+//         if($region->id == $id)
+//         return $region->price;
+//     }
+//     return $price[$id].price;
+//     // $planePrice = PlanePrice::findOrFail(1);
+//     // return $planePrice;
+// })->name('test');
+
+Route::view('/test', "admin.result");
