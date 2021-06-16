@@ -89,6 +89,63 @@
         </div>
         <!--/.col-->
     </div> --}}
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-3 display-5"><span class="badge badge-warning">1 - yo'nalish</span></h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 px-3 display-4">Toshkent</div>
+                            <div class="col-4 px-3 display-4">Toshkent</div>
+                            <div class="col-4 px-3 display-4">Toshkent</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-3 display-5"><span class="badge badge-warning">2 - yo'nalish</span></h3>
+                    <div class="container">
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Well done!</h4>
+                            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                        </div>
+
+                        <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">Well done!</h4>
+                            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                        </div>
+
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">Well done!</h4>
+                            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-3 display-5"><span class="badge badge-warning">3 - yo'nalish</span></h3>
+                    <div class="container">
+                        <div>
+                            1fdkjaskajdsflksdj
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-lg-6">
@@ -113,7 +170,7 @@
             </div>
         </div><!-- /# column -->
     </div><!-- /# row -->
-    
+
 @endsection
 
 @section('additional_scripts')
