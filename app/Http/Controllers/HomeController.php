@@ -49,7 +49,8 @@ class HomeController extends Controller
                 'districtTo.required'   => "Boradigan tuman yoki shahringizni tanlang", 
             ]
         );
-        return $request;
+        // return $request;
+        return view('admin.result');
     }
 
     public function importRegions(Request $request)
