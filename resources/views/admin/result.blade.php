@@ -102,9 +102,22 @@
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
                             </div>
                             <div class="alert alert-success mt-4" role="alert">
-                                <h4 class="alert-heading">Well done!</h4>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="card-right float-right text-right">
+                                            <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <h4>Kuniga 3 mahal</h4>
+                                    </div>
+                                    <div class="col-5">
+                                        <h4>85000</h4>
+                                    </div>
+                                </div>
+
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -123,18 +136,42 @@
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
                             </div>
                             <div class="alert alert-success mt-4" role="alert">
-                                <h4 class="alert-heading">Well done!</h4>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <div class="row">   
+                                    <div class="col-2">
+                                        <div class="card-right float-right text-right">
+                                            <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+
+                                    </div>
+                                </div>
                             </div>
     
                             <div class="alert alert-warning" role="alert">
-                                <h4 class="alert-heading">Well done!</h4>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <div class="row">   
+                                    <div class="col-2">
+                                        <div class="card-right float-right text-right">
+                                            <i class="icon fade-5 icon-lg fa fa-train"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+
+                                    </div>
+                                </div>
                             </div>
     
                             <div class="alert alert-danger" role="alert">
-                                <h4 class="alert-heading">Well done!</h4>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <div class="row">   
+                                    <div class="col-2">
+                                        <div class="card-right float-right text-right">
+                                            <i class="icon fade-5 icon-lg fa fa-plane"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,8 +191,16 @@
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
                             </div>
                             <div class="alert alert-success mt-4" role="alert">
-                                <h4 class="alert-heading">Well done!</h4>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <div class="row">   
+                                    <div class="col-2">
+                                        <div class="card-right float-right text-right">
+                                            <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -49,7 +49,16 @@ class HomeController extends Controller
                 'districtTo.required'   => "Boradigan tuman yoki shahringizni tanlang", 
             ]
         );
-        // return $request;
+        $region = Region::findOrFail($request->regionFrom);
+        $prices = $region->planePrice;
+        foreach($prices as $price)
+        {
+            if($price->regionTo == $request->regionTo)
+            {
+                return $price;
+            }
+        }
+        return $prices;
         return view('admin.result');
     }
 
