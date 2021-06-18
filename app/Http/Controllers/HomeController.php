@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Region;
+use App\Models\District;
 use Illuminate\Http\Request;
 use App\Imports\RegionsImport;
 use App\Imports\DistrictsImport;
@@ -49,8 +50,26 @@ class HomeController extends Controller
                 'districtTo.required'   => "Boradigan tuman yoki shahringizni tanlang", 
             ]
         );
-        $region = Region::findOrFail($request->regionFrom);
-        $prices = $region->planePrice;
+        $regionFrom     = Region::findOrFail($request->regionFrom);
+        $regionTo       = Region::findOrFail($request->regionTo);
+        $districtFrom   = District::findOrFail($request->districtFrom);
+        $districtTo     = District::findOrFail($request->districtTo);
+
+        if($districtFrom->center){
+            $route1['districtFrom'] = $districtFrom;
+            $route1['toCenter'] = $regionFrom->districts->where('center', null)->firstWhere('id', '!=', '0');
+        } else {
+            $route1 = null;
+        }
+        // return ['route1' => $route1];
+        $route2['fromRegionCenter'] = $regionFrom->districts->where('center', null)->first();
+        $route2['toRegionCenter'] = $regionTo->districts->where('center', null)->first();
+        $route2['planePrice'] = $regionFrom->planePrice->where('regionTo', $request->regionTo)->first();
+        $route2['trainPrice'] = $regionFrom->trainPrice->where('regionTo', $request->regionTo)->first();
+        $route2['busPrice'] = $regionFrom->busPrice->where('regionTo', $request->regionTo)->first();
+        return ['route2' => $route2];
+
+        $prices = $regionFrom->planePrice;
         foreach($prices as $price)
         {
             if($price->regionTo == $request->regionTo)
