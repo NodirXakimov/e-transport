@@ -102,7 +102,7 @@
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
                             </div>
                             <div class="alert alert-success mt-4" role="alert">
-                                <div class="row">
+                                <div class="row align-items-center text-center">
                                     <div class="col-2">
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fa fa-bus"></i>
@@ -110,9 +110,10 @@
                                     </div>
                                     <div class="col-5">
                                         <h4>Kuniga 3 mahal</h4>
+                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
                                     </div>
                                     <div class="col-5">
-                                        <h4>85000</h4>
+                                        <h3><b>85000</b> so'm</h3>
                                     </div>
                                 </div>
 
@@ -136,40 +137,52 @@
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
                             </div>
                             <div class="alert alert-success mt-4" role="alert">
-                                <div class="row">   
+                                <div class="row align-items-center text-center">   
                                     <div class="col-2">
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fa fa-bus"></i>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-
+                                    <div class="col-5">
+                                        <h4>Kuniga 3 mahal</h4>
+                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                    </div>
+                                    <div class="col-5">
+                                        <h3><b>85000</b> so'm</h3>
                                     </div>
                                 </div>
                             </div>
     
                             <div class="alert alert-warning" role="alert">
-                                <div class="row">   
+                                <div class="row align-items-center text-center">   
                                     <div class="col-2">
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fa fa-train"></i>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-
+                                    <div class="col-5">
+                                        <h4>Kuniga 3 mahal</h4>
+                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                    </div>
+                                    <div class="col-5">
+                                        <h3><b>85000</b> so'm</h3>
                                     </div>
                                 </div>
                             </div>
     
                             <div class="alert alert-danger" role="alert">
-                                <div class="row">   
+                                <div class="row align-items-center text-center">   
                                     <div class="col-2">
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fa fa-plane"></i>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-
+                                    <div class="col-5">
+                                        <h4>Kuniga 1 mahal</h4>
+                                        <h4>Soat: 8:00 da</h4>
+                                    </div>
+                                    <div class="col-5">
+                                        <h3><b>85000</b> so'm</h3>
                                     </div>
                                 </div>
                             </div>
@@ -191,14 +204,18 @@
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
                             </div>
                             <div class="alert alert-success mt-4" role="alert">
-                                <div class="row">   
+                                <div class="row align-items-center text-center">   
                                     <div class="col-2">
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fa fa-bus"></i>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-
+                                    <div class="col-5">
+                                        <h4>Kuniga 3 mahal</h4>
+                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                    </div>
+                                    <div class="col-5">
+                                        <h3><b>85000</b> so'm</h3>
                                     </div>
                                 </div>
                             </div>
