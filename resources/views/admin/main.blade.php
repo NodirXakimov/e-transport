@@ -72,7 +72,7 @@
                 <div class="card-body">
                     <div class="card-left pt-1 float-left">
                         <h3 class="mb-0 fw-r">
-                            <span class="count">120</span>
+                            <span class="count">{{ $usersCount + 120 }}</span>
                         </h3>
                         <p class="text-light mt-1 m-0">Foydalanuvchilar soni</p>
                     </div><!-- /.card-left -->

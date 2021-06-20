@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Region;
 use App\Models\District;
 use Illuminate\Http\Request;
@@ -32,7 +33,8 @@ class HomeController extends Controller
     public function index()
     {
         $regions = Region::select('id', 'name')->orderBy('name')->get();
-        return view('admin.main', ['regions' => $regions]);
+        $usersCount = User::count('id');
+        return view('admin.main', ['regions' => $regions, 'usersCount' => $usersCount]);
     }
 
     public function ways(Request $request)
