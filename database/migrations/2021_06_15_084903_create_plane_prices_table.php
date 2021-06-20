@@ -17,7 +17,7 @@ class CreatePlanePricesTable extends Migration
             $table->id();
             $table->integer('regionFrom');
             $table->integer('regionTo');
-            $table->decimal('price', 10, 2);
+            $table->decimal('price', 10, 2)->nullable();
             $table->timestamps();
         });
     }
