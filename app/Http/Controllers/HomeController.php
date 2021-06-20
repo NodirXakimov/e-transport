@@ -56,29 +56,30 @@ class HomeController extends Controller
         $districtTo     = District::findOrFail($request->districtTo);
 
         if($districtFrom->center){
-            $route1['districtFrom'] = $districtFrom;
-            $route1['toCenter'] = $regionFrom->districts->where('center', null)->firstWhere('id', '!=', '0');
+            $route1['districtFrom'] = $districtFrom->name;
+            $route1['toCenter'] = $regionFrom->districts->where('center', null)->first()->name;
         } else {
             $route1 = null;
         }
-        // return ['route1' => $route1];
-        $route2['fromRegionCenter'] = $regionFrom->districts->where('center', null)->first();
-        $route2['toRegionCenter'] = $regionTo->districts->where('center', null)->first();
-        $route2['planePrice'] = $regionFrom->planePrice->where('regionTo', $request->regionTo)->first();
-        $route2['trainPrice'] = $regionFrom->trainPrice->where('regionTo', $request->regionTo)->first();
-        $route2['busPrice'] = $regionFrom->busPrice->where('regionTo', $request->regionTo)->first();
-        return ['route2' => $route2];
+        $data['route1'] =  $route1;
 
-        $prices = $regionFrom->planePrice;
-        foreach($prices as $price)
-        {
-            if($price->regionTo == $request->regionTo)
-            {
-                return $price;
-            }
+        $route2['fromRegionCenter'] = $regionFrom->districts->where('center', null)->first()->name;
+        $route2['toRegionCenter'] = $regionTo->districts->where('center', null)->first()->name;
+        $route2['planePrice'] = $regionFrom->planePrice->where('regionTo', $request->regionTo)->first()->price;
+        $route2['trainPrice'] = $regionFrom->trainPrice->where('regionTo', $request->regionTo)->first()->price;
+        $route2['busPrice'] = $regionFrom->busPrice->where('regionTo', $request->regionTo)->first()->price;
+
+        $data['route2'] = $route2;
+        
+        if($districtTo->center){
+            $route3['districtTo'] = $districtTo->name;
+            $route3['toCenter'] = $regionTo->districts->where('center', null)->first()->name;
+        } else {
+            $route3 = null;
         }
-        return $prices;
-        return view('admin.result');
+        $data['route3'] = $route3;
+
+        return view('admin.result', ['data' => $data]);
     }
 
     public function importRegions(Request $request)
