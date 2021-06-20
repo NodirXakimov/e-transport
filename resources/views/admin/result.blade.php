@@ -117,7 +117,7 @@
                                             <h4>Soat: 8:00, 12:00, 16:00</h4>
                                         </div>
                                         <div class="col-5">
-                                            <h3><b>85000</b> so'm</h3>
+                                            <h3><b>{{ rand(10, 15) }} 000</b> so'm</h3>
                                         </div>
                                     </div>
 
@@ -225,7 +225,7 @@
                                             <h4>Soat: 8:00, 12:00, 16:00</h4>
                                         </div>
                                         <div class="col-5">
-                                            <h3><b>85000</b> so'm</h3>
+                                            <h3><b>{{ rand(10, 15) }} 000</b> so'm</h3>
                                         </div>
                                     </div>
                                 </div>
