@@ -40,6 +40,7 @@ class HomeController extends Controller
     public function ways(Request $request)
     {
         // return $request;
+        $price = null;
         $validate = $request->validate([
                 'regionFrom'    => 'required',
                 'regionTo'      => 'required',
