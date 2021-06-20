@@ -72,7 +72,7 @@
                     </li>
                     <li class="menu-title">Transport turlari</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plane"></i>Aviareyslar</a>
+                        <a href="{{ route('aviaflights') }}" class="dropdown-toggle" = aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plane"></i>Aviareyslar</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-train"></i>Temir yo'r reyslari</a>

@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
     Route::view('importBusPrice', 'admin.importBusPrice');
     Route::post('importBusPrice', [App\Http\Controllers\HomeController::class, 'importBusPrice'])->name('importBusPrice');
 
+    Route::view('aviaflights', 'admin.aviaflight')->name('aviaflights');
+
 });
 // Route::get('/test/{id}', function($id){
 //     $region = Region::findOrFail(1);
