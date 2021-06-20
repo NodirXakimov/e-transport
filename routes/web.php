@@ -45,6 +45,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('importBusPrice', [App\Http\Controllers\HomeController::class, 'importBusPrice'])->name('importBusPrice');
 
     Route::view('aviaflights', 'admin.aviaflight')->name('aviaflights');
+    Route::view('railways', 'admin.railway')->name('railways');
+    Route::view('busways', 'admin.busway')->name('busways');
 
 });
 // Route::get('/test/{id}', function($id){
