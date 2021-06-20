@@ -55,6 +55,14 @@ class HomeController extends Controller
         $districtFrom   = District::findOrFail($request->districtFrom);
         $districtTo     = District::findOrFail($request->districtTo);
 
+        if($request->regionFrom == $request->regionTo){
+            $route1['districtFrom'] = $districtFrom->name;
+            $route1['toCenter'] = $districtTo->name;
+            $data['route1'] = $route1;
+            $data['route2'] = null;
+            $data['route3'] = null;
+            return view('admin.result', ['data' => $data]);
+        }
         if($districtFrom->center){
             $route1['districtFrom'] = $districtFrom->name;
             $route1['toCenter'] = $regionFrom->districts->where('center', null)->first()->name;
@@ -78,7 +86,7 @@ class HomeController extends Controller
             $route3 = null;
         }
         $data['route3'] = $route3;
-        // return $data;
+        // return $data;    
         return view('admin.result', ['data' => $data]);
     }
 
