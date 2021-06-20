@@ -90,99 +90,142 @@
         <!--/.col-->
     </div> --}}
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="mb-3 display-5"><span class="badge badge-warning">1 - yo'nalish</span></h3>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Toshkentdan</div>
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center"><span><i class="fa fa-arrow-right"></i></span></div>
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
-                            </div>
-                            <div class="alert alert-success mt-4" role="alert">
-                                <div class="row align-items-center text-center">
-                                    <div class="col-2">
-                                        <div class="card-right float-right text-right">
-                                            <i class="icon fade-5 icon-lg fa fa-bus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4>Kuniga 3 mahal</h4>
-                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
-                                    </div>
-                                    <div class="col-5">
-                                        <h3><b>85000</b> so'm</h3>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
+        @php $i = 1; @endphp
+
+        @if (isset($data) && $data['route1'] != null)
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="mb-3 display-5"><span class="badge badge-warning">{{ $i++ }} - yo'nalish</span></h3>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">{{ $data['route1']['districtFrom'] }}dan</div>
+                                    <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center"><span><i class="fa fa-arrow-right"></i></span></div>
+                                    <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">{{ $data['route1']['toCenter'] }}gacha</div>
+                                </div>
+                                <div class="alert alert-success mt-4" role="alert">
+                                    <div class="row align-items-center text-center">
+                                        <div class="col-2">
+                                            <div class="card-right float-right text-right">
+                                                <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <h4>Kuniga 3 mahal</h4>
+                                            <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                        </div>
+                                        <div class="col-5">
+                                            <h3><b>85000</b> so'm</h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        @endif
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mb-3 display-5"><span class="badge badge-warning">2 - yo'nalish</span></h3>
+                        <h3 class="mb-3 display-5"><span class="badge badge-warning">{{ $i++ }} - yo'nalish</span></h3>
                         <div class="container">
                             <div class="row">
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Toshkentdan</div>
+                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">{{ $data['route2']['fromRegionCenter'] }}dan</div>
                                 <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center"><span><i class="fa fa-arrow-right"></i></span></div>
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
+                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">{{ $data['route2']['toRegionCenter'] }}gacha</div>
                             </div>
-                            <div class="alert alert-success mt-4" role="alert">
-                                <div class="row align-items-center text-center">   
-                                    <div class="col-2">
-                                        <div class="card-right float-right text-right">
-                                            <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                            @if ($data['route2']['busPrice'] != null)
+                                <div class="alert alert-success mt-4" role="alert">
+                                    <div class="row align-items-center text-center">   
+                                        <div class="col-2">
+                                            <div class="card-right float-right text-right">
+                                                <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4>Kuniga 3 mahal</h4>
-                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
-                                    </div>
-                                    <div class="col-5">
-                                        <h3><b>85000</b> so'm</h3>
+                                        <div class="col-5">
+                                            <h4>Kuniga 3 mahal</h4>
+                                            <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                        </div>
+                                        <div class="col-5">
+                                            <h3><b>{{ $data['route2']['busPrice'] }}</b> so'm</h3>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="alert alert-warning" role="alert">
-                                <div class="row align-items-center text-center">   
-                                    <div class="col-2">
-                                        <div class="card-right float-right text-right">
-                                            <i class="icon fade-5 icon-lg fa fa-train"></i>
+                            @endif
+                            @if ($data['route2']['trainPrice'] != null)
+                                <div class="alert alert-warning" role="alert">
+                                    <div class="row align-items-center text-center">   
+                                        <div class="col-2">
+                                            <div class="card-right float-right text-right">
+                                                <i class="icon fade-5 icon-lg fa fa-train"></i>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4>Kuniga 3 mahal</h4>
-                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
-                                    </div>
-                                    <div class="col-5">
-                                        <h3><b>85000</b> so'm</h3>
+                                        <div class="col-5">
+                                            <h4>Kuniga 3 mahal</h4>
+                                            <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                        </div>
+                                        <div class="col-5">
+                                            <h3><b>{{ $data['route2']['trainPrice'] }}</b> so'm</h3>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="alert alert-danger" role="alert">
-                                <div class="row align-items-center text-center">   
-                                    <div class="col-2">
-                                        <div class="card-right float-right text-right">
-                                            <i class="icon fade-5 icon-lg fa fa-plane"></i>
+                            @endif
+                            @if ($data['route2']['planePrice'] != null)
+                                <div class="alert alert-danger" role="alert">
+                                    <div class="row align-items-center text-center">   
+                                        <div class="col-2">
+                                            <div class="card-right float-right text-right">
+                                                <i class="icon fade-5 icon-lg fa fa-plane"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <h4>Kuniga 1 mahal</h4>
+                                            <h4>Soat: 8:00 da</h4>
+                                        </div>
+                                        <div class="col-5">
+                                            <h3><b>{{ $data['route2']['planePrice'] }}</b> so'm</h3>
                                         </div>
                                     </div>
-                                    <div class="col-5">
-                                        <h4>Kuniga 1 mahal</h4>
-                                        <h4>Soat: 8:00 da</h4>
-                                    </div>
-                                    <div class="col-5">
-                                        <h3><b>85000</b> so'm</h3>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (isset($data) && $data['route3'] != null)
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="mb-3 display-5"><span class="badge badge-warning">{{ $i++ }} - yo'nalish</span></h3>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">{{ $data['route3']['toCenter'] }}dan</div>
+                                    <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center"><span><i class="fa fa-arrow-right"></i></span></div>
+                                    <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">{{ $data['route3']['districtTo'] }}gacha</div>
+                                </div>
+                                <div class="alert alert-success mt-4" role="alert">
+                                    <div class="row align-items-center text-center">   
+                                        <div class="col-2">
+                                            <div class="card-right float-right text-right">
+                                                <i class="icon fade-5 icon-lg fa fa-bus"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <h4>Kuniga 3 mahal</h4>
+                                            <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                        </div>
+                                        <div class="col-5">
+                                            <h3><b>85000</b> so'm</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -190,40 +233,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="mb-3 display-5"><span class="badge badge-warning">3 - yo'nalish</span></h3>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Toshkentdan</div>
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center"><span><i class="fa fa-arrow-right"></i></span></div>
-                                <div class="col-4 px-3 display-4" style="font-size: 30px; text-align:center">Samarqandgacha</div>
-                            </div>
-                            <div class="alert alert-success mt-4" role="alert">
-                                <div class="row align-items-center text-center">   
-                                    <div class="col-2">
-                                        <div class="card-right float-right text-right">
-                                            <i class="icon fade-5 icon-lg fa fa-bus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4>Kuniga 3 mahal</h4>
-                                        <h4>Soat: 8:00, 12:00, 16:00</h4>
-                                    </div>
-                                    <div class="col-5">
-                                        <h3><b>85000</b> so'm</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endif
     
         <div class="row">
             <div class="col-lg-6">

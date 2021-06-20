@@ -78,7 +78,7 @@ class HomeController extends Controller
             $route3 = null;
         }
         $data['route3'] = $route3;
-
+        // return $data;
         return view('admin.result', ['data' => $data]);
     }
 
