@@ -168,8 +168,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-5">
-                                                <h4>Kuniga 3 mahal</h4>
-                                                <h4>Soat: 8:00, 12:00, 16:00</h4>
+                                                <h4>Eng yaqin poyezd reysi</h4>
+                                                <h4>{{ rand(21, 30) }}.06.2021 {{ rand(10, 22) }}:00</h4>
                                             </div>
                                             <div class="col-5">
                                                 <h3><b>{{ $data['route2']['trainPrice'] }}</b> so'm</h3>
@@ -186,8 +186,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-5">
-                                                <h4>Kuniga 1 mahal</h4>
-                                                <h4>Soat: 8:00 da</h4>
+                                                <h4>Eng yaqin aviareys</h4>
+                                                <h4>{{ rand(21, 30) }}.06.2021 {{ rand(10, 22) }}:00</h4>
                                             </div>
                                             <div class="col-5">
                                                 <h3><b>{{ $data['route2']['planePrice'] }}</b> so'm</h3>
