@@ -28,75 +28,75 @@
                             <tbody>
                                 <tr>
                                     <td>Toshkent</td>
-                                    <td>Andijon</td>
-                                    <td>24.06.2021</td>
-                                    <td>150 000 so'm</td>
+                                    <td>Qarshi</td>
+                                    <td>27.06.2021</td>
+                                    <td>59 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Toshkent</td>
-                                    <td>Qarshi</td>
-                                    <td>25.06.2021</td>
-                                    <td>160 000 so'm</td>
+                                    <td>Termiz</td>
+                                    <td>29.06.2021</td>
+                                    <td>89 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Samarqand</td>
-                                    <td>Farg'ona</td>
-                                    <td>23.06.2021</td>
-                                    <td>140 000 so'm</td>
+                                    <td>Nukus</td>
+                                    <td>26.06.2021</td>
+                                    <td>50 000 so'm</td>
                                 </tr>
                                 <tr>
+                                    <td>Navoiy</td>
                                     <td>Toshkent</td>
-                                    <td>Nukus</td>
-                                    <td>28.06.2021</td>
-                                    <td>250 000 so'm</td>
+                                    <td>30.06.2021</td>
+                                    <td>57 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Toshkent</td>
                                     <td>Buxoro</td>
                                     <td>27.06.2021</td>
-                                    <td>155 000 so'm</td>
+                                    <td>60 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Termiz</td>
                                     <td>Toshkent</td>
                                     <td>24.06.2021</td>
-                                    <td>260 000 so'm</td>
+                                    <td>89 000 so'm</td>
                                 </tr>
                                 <tr>
-                                    <td>Namangan</td>
-                                    <td>Qarshi</td>
-                                    <td>29.06.2021</td>
-                                    <td>200 000 so'm</td>
+                                    <td>Urganch</td>
+                                    <td>Toshkent</td>
+                                    <td>27.06.2021</td>
+                                    <td>109 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Navoiy</td>
                                     <td>Termiz</td>
                                     <td>26.06.2021</td>
-                                    <td>135 000 so'm</td>
+                                    <td>55 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Urganch</td>
-                                    <td>Farg'ona</td>
+                                    <td>Samarqand</td>
                                     <td>30.06.2021</td>
-                                    <td>240 000 so'm</td>
+                                    <td>55 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Jizzax</td>
-                                    <td>Nukus</td>
+                                    <td>Toshkent</td>
                                     <td>27.06.2021</td>
-                                    <td>210 000 so'm</td>
+                                    <td>30 000 so'm</td>
                                 </tr>
                                 <tr>
                                     <td>Toshkent</td>
-                                    <td>Buxoro</td>
-                                    <td>27.06.2021</td>
-                                    <td>155 000 so'm</td>
+                                    <td>Denov</td>
+                                    <td>01.07.2021</td>
+                                    <td>75 000 so'm</td>
                                 </tr>
                                 <tr>
-                                    <td>Termiz</td>
-                                    <td>Toshkent</td>
-                                    <td>24.06.2021</td>
-                                    <td>260 000 so'm</td>
+                                    <td>Navoiy</td>
+                                    <td>Samarqand</td>
+                                    <td>25.06.2021</td>
+                                    <td>30 000 so'm</td>
                                 </tr>
                                 
                                 
