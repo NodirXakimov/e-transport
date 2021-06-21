@@ -164,6 +164,10 @@
 <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
 <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
 <script src="assets/js/init/datatables-init.js"></script>
-
-
+<script>
+    jQuery(document).ready(function($) {
+        $("#nav li[class='active']").removeClass('active');
+        $("#nav #aviaflight").addClass('active');    
+    });
+</script>
 @endsection

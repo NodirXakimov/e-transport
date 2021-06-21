@@ -66,18 +66,18 @@
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="nav">
                     <li class="active">
                         <a href="{{ route('home') }}"><i class="menu-icon fa fa-laptop"></i>Asosiy </a>
                     </li>
                     <li class="menu-title">Transport turlari</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown" id="aviaflight">
                         <a href="{{ route('aviaflights') }}" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plane"></i>Aviareyslar</a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown" id="railway">
                         <a href="{{ route('railways') }}" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-train"></i>Temir yo'l reyslari</a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown" id="busway">
                         <a href="{{ route('busways') }}" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bus"></i>Avtobus reyslari</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
