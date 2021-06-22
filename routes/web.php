@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Region;
 use App\Models\PlanePrice;
+
+use App\Mail\MailtrapExample;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +65,13 @@ Route::middleware(['auth'])->group(function () {
 // })->name('test');
 
 Route::view('/test', "admin.result");
+Route::get('/send-mail', function () {
+
+    Mail::to('nodirxakimov@yandex.ru')->send(new MailtrapExample());
+
+    // @finished
+    //     @telegram('1700628743:AAEnXq6oyVWnwWBJ4UfAExYNqgX-O6_oOmk','1612234310')
+    // @endfinished
+    return 'A message has been sent to Mailtrap!';
+
+});
