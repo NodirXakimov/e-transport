@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -64,6 +66,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Http::post('https://api.telegram.org/bot1700628743:AAEnXq6oyVWnwWBJ4UfAExYNqgX-O6_oOmk/sendMessage', [
+            'chat_id' => '-1001579906510',
+            'text' => ' ' . $data['name'] . " ismli foydalanuvchi tizimda " . Carbon::now() . "da ro'yhatdan o'tdi!" ,
+        ]);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
