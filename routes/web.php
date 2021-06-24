@@ -79,7 +79,7 @@ Route::get('/send-mail', function () {
 Route::get('/telegram', function(){
     $response = Http::post('https://api.telegram.org/bot1700628743:AAEnXq6oyVWnwWBJ4UfAExYNqgX-O6_oOmk/sendMessage', [
         'chat_id' => '-1001579906510',
-        'text' => '```Network``` Administrator',
+        'text' => 'It is just test text',
         'disable_notification' => true
     ]);
     return $response;

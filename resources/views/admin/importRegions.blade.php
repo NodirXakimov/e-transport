@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('additional_links')
-    <link rel="stylesheet" href="{{ asset('assets/css/lib/chosen/chosen.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/css/lib/chosen/chosen.min.css') }}">
     
 @endsection
 @section('content')
@@ -104,8 +104,8 @@
 @endsection
 
 @section('additional_scripts')
-<script src="{{ asset('assets/js/main.js') }}"></script>
-<script src="{{ asset('assets/js/lib/chosen/chosen.jquery.js') }}"></script>
+<script src="{{secure_asset('assets/js/main.js') }}"></script>
+<script src="{{secure_asset('assets/js/lib/chosen/chosen.jquery.js') }}"></script>
 
 
 @endsection

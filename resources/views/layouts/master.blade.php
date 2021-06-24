@@ -7,21 +7,21 @@
     <meta name="description" content="myway transport system">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="{{ asset('images/logo.jpg') }}">
+    <link rel="apple-touch-icon" href="{{secure_asset('images/logo.jpg') }}">
     <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/normalize.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/normalize.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/cs-skin-elastic.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/chartist.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/jqvmap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/weather-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/downloaded-css/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/css/cs-skin-elastic.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/chartist.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/jqvmap.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/weather-icons.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('assets/downloaded-css/fullcalendar.min.css') }}">
     @yield('additional_links')
    <style>
     #weatherWidget .currentDesc {
@@ -95,7 +95,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="{{ asset('images/logo.jpg') }}" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img src="{{secure_asset('images/logo.jpg') }}" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
@@ -200,7 +200,7 @@
     <!-- /#right-panel -->
 
     <!-- Scripts -->
-    <script src="{{ asset('js/axios.min.js') }}"></script>
+    <script src="{{secure_asset('js/axios.min.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
