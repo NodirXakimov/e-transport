@@ -176,6 +176,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         // TelegramNotifications\TelegramServiceProvider::class,
+        Telegram\Bot\Laravel\TelegramServiceProvider::class
+
 
     ],
 

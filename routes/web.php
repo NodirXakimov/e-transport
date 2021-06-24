@@ -75,3 +75,19 @@ Route::get('/send-mail', function () {
     return 'A message has been sent to Mailtrap!';
 
 });
+
+Route::get('/telegram', function(){
+    $response = Http::post('https://api.telegram.org/bot1700628743:AAEnXq6oyVWnwWBJ4UfAExYNqgX-O6_oOmk/sendMessage', [
+        'chat_id' => '-1001579906510',
+        'text' => '```Network``` Administrator',
+        'disable_notification' => true
+    ]);
+    return $response;
+});
+
+Route::get('/telegram/getUpdates', function(){
+    $response = Http::get('https://api.telegram.org/bot1700628743:AAEnXq6oyVWnwWBJ4UfAExYNqgX-O6_oOmk/getUpdates', [
+        'chat_id' => '1612234310'
+    ]);
+    return $response;
+});
