@@ -1,3 +1,4 @@
+Deployed on Heroku service https://mywaylaravelapp.herokuapp.com/
 You can find easy ways with this app to go any regions and districts of Uzbekistan. And you will know how much stand it!
 If you are register, app send notification to https://t.me/my_way_notification telegram channel!
 ![image](https://user-images.githubusercontent.com/36696948/124081264-c0bb0980-da64-11eb-8201-db8cfa7f825e.png)
